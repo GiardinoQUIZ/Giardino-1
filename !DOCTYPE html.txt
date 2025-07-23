@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Giardino</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #intro, #story, #map, #question, #result { display: none; }
+    .active { display: block; }
+    .statua {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+      margin: 5px 0;
+    }
+    button {
+      margin: 10px 5px 10px 0;
+      padding: 8px 16px;
+      font-size: 16px;
+    }
+    #question, #result {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+      position: relative;
+      max-width: 500px;
+    }
+    #closeBtn, #closeBtnResult {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 18px;
+      user-select: none;
+    }
+    #map img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 15px;
+      border: 1px solid #999;
+    }
+  </style>
+</head>
+<body>
+
+<div id="intro" class="active">
+  <h1>Pronto a scoprire i segreti di questo giardino?</h1>
+  <button id="startBtn">Inizia</button>
+</div>
+
+<div id="story">
+  <p>Questo giardino ha una storia antica e misteriosa. Durante il percorso scoprirete la posizione originale di alcune statue famose.</p>
+  <button id="toMapBtn">Vai alla mappa</button>
+</div>
+
+<div id="map">
+  <h2>Mappa del Giardino</h2>
+  <p>Clicca su una statua per rispondere alla domanda:</p>
+  <ul>
+    <li class="statua" data-id="1">Statua 1</li>
+    <li class="statua" data-id="2">Statua 2</li>
+    <li class="statua" data-id="3">Statua 3</li>
+    <li class="statua" data-id="4">Statua 4</li>
+    <li class="statua" data-id="5">Statua 5</li>
+    <li class="statua" data-id="6">Statua 6</li>
+  </ul>
+</div>
+
+<div id="question">
+  <span id="closeBtn">X</span>
+  <p id="questionText"></p>
+  <div id="answers"></div>
+</div>
+
+<div id="result">
+  <span id="closeBtnResult">X</span>
+  <p id="result
